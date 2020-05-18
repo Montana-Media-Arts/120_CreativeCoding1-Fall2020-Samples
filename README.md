@@ -1,1 +1,1 @@
-# 120_CreativeCodin1-Fall2020-Samples
+# This is where all the code samples for Creative Coding will reside.  Please let me know if you have any questions!
