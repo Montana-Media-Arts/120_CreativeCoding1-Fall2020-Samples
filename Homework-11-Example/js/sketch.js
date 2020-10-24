@@ -13,6 +13,9 @@ var shapeY = 50;
 var shapeXSpeed;
 var shapeYSpeed;
 
+// create a shape when the mouse is clicked
+var mouseShapeX;
+var mouseShapeY;
 function setup()
 {
     createCanvas(500, 600);
@@ -24,6 +27,7 @@ function setup()
 function draw()
 {
     background(120,45,78);
+    stroke(0);
     fill(0);
     // top border
     rect(0,0,width,10);
@@ -89,8 +93,26 @@ function draw()
     {
         shapeY = height;
     }
+
+    // check to see if the character has left the exit
+    if(characterX > width && characterY > width-50)
+    {
+        fill(0);
+        stroke(5);
+        textSize(26);
+        text("You Win!", width/2-50, height/2-50);
+    }
+
+    // create the shape based on the mouse click
+    fill(120,130,140);
+    circle(mouseShapeX, mouseShapeY, 25);
 }
 
+function mouseClicked()
+{
+    mouseShapeX = mouseX;
+    mouseShapeY = mouseY;
+}
 /*
 function keyPressed() {
     if (keyCode === LEFT_ARROW) {
